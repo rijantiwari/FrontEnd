@@ -1,0 +1,28 @@
+.student-hero{
+    background-color: white;
+    display: flex;
+    justify-content: space-evenly;
+    width: 50%;
+    margin-left: 400px;
+    border: 1px solid black;
+    border-radius: 10px;
+    box-shadow: 0.5px 0.5px 0.5px 0.5px rgb(248, 247, 247);
+
+}
+.student-hero .title{
+    color: rgb(207, 40, 40);
+   
+
+}
+h1{
+    text-align: center;
+    margin-top: 10%;
+    
+}
+
+.details{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    color: rgb(102, 58, 66)  ;
+}
