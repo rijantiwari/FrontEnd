@@ -34,11 +34,17 @@ body{
   
 }
 .forgot-password{
-    margin-left: 60%;
+    margin-left: 40%;
     font-family: 'Roboto', sans-serif;
     font-size: 12px;
     text-decoration: none;
 
+}
+.sign-up{
+    margin-left: 10%;
+    font-family: 'Roboto', sans-serif;
+    font-size: 12px;
+    text-decoration: none;
 }
 .login{
     margin-top: 10px;
