@@ -62,30 +62,12 @@ for(let i=0; i< inputNums.length;i++){
 // //should be unique according to id and should sum the qty with same id 
 // output=[food:{name:"pizza",qty:10}]
 
-
-// const data = [
-//         { food: {name:"pizza", id: 2 }, qty: 1 },
-//         { food: {name:"momo",id: 3 }, qty: 5 },
-//         { food: { name:"pizza",id: 2 }, qty: 9 }
-//       ];
-// let arrOfObj=data.filter((element,index) => {
-   
-//     for(let i=index+1;i < data.length;i++){
-//         if(element.name === data[i].name ){
-//             element.id+= data[i].id
-//             console.log("this statement is true");
-//             // console.log(element.id);
-//         }
-//         else{
-//             console.log("this statement is also true")
-//         }
-//     }
-// })
-// console.log(arrOfObj)
 // 5.Write a method to Factorialize a Number
 // Example:
 // Input:factorialize(5)
 // Output:120
+
+
 function factorialize(num) {
     if (num === 0 || num === 1)
       return 1;
