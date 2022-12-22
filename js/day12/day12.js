@@ -1,11 +1,10 @@
-let button = document.querySelector("button");
-console.log(button,'button');
-console.log(this,"this is ");
-button.addEventListener("click",(event)=> {
-    console.log(this,"hello event")
-}
+// let button = document.querySelector("button");
+// console.log(button,'button');
+// console.log(this,"this is ");
+// button.addEventListener("click",(event)=> {
+//     console.log(this,"hello event")
+// }
 
-)
 
 // // default params
 // function add(num1, num2=10){
@@ -54,3 +53,14 @@ button.addEventListener("click",(event)=> {
 // const copyVariable = {...myVehicle,...updateMyVehicle};
 // console.log(copyVariable)
 // deep copy and shallow copy
+const button= document.querySelector("button");
+const getQuota = document.getElementById("getquotahere")
+const getPost=()=>{
+    let data =fetch("https://jsonplaceholder.typicode.com/posts/1")
+.then((response) => response.json())
+.then((data) => getQuota.innerText=data.title.id,);
+
+};
+
+button.addEventListener("click",getPost);
+
