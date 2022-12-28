@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import Child from './Child';
 
 export default class CounterInterval extends Component {
     constructor(props) {
@@ -32,15 +33,19 @@ export default class CounterInterval extends Component {
         clearInterval(this.state.intervalId);
         this.setState({ intervalId: null });
       }
+      
     
       render() {
+        // console.log(this,'test value')
         return (
           <div>
-            <h1>{this.state.count}</h1>
+            <Child count={this.state.count} />
+            <h1>{this.props.children}</h1>
             <button onClick={this.startCounting}>Start</button>
             <button onClick={this.stopCounting}>Stop</button>
             <button onClick={this.handleDecrement}>Decrement</button>
           </div>
+          
         );
       }
 }
