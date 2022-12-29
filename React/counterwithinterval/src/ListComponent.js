@@ -1,9 +1,10 @@
-import React, { Component } from 'react'
+import React from 'react'
 
-export default class ListComponent extends Component {
-  render() {
-    return (
-      <div>{this.props.list}</div>
-    )
-  }
+function ListComponent({data,id}) {
+   console.log(id,"id");    
+  return (
+  <> </>
+  )
 }
+
+export default ListComponent
