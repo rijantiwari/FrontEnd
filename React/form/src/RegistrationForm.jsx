@@ -2,33 +2,49 @@ import React from 'react'
 import { useState } from 'react';
 
 function RegistrationForm() {
-    const[username,setUserName] = useState("");
-    const[password, setPassword] = useState("");
-    const[cpassword,setCpassword]=useState("");
-    const[passwordError,setPasswordEroor]=useState("");
-    const[isEnabled, setisEnabled] = useState("");
+    const[userinfo,setUserinfo]=useState({
+        username:"",
+        password:"",
+        cpassword:"",
+        passwordError:""
+    });
+    
+    // const[username,setUserName] = useState("");
+    // const[password, setPassword] = useState("");
+    // const[cpassword,setCpassword]=useState("");
+    // const[passwordError,setPasswordEroor]=useState("");
+    // const[isEnabled, setisEnabled] = useState("");
     const onSubmit= (e)=>{
         e.preventDefault();
-    !(username === "" || password ==="" || cpassword === " ")
-        ?(password===cpassword)
+    !(userinfo.username === "" || userinfo.password ==="" || userinfo.cpassword === " ")
+        ?(userinfo.password===userinfo.cpassword)
         ? alert (" Form Submitted") 
-        :setPasswordEroor("*Both Passsword Should Match  ")
+        :setUserinfo(
+            {...userinfo, passwordError:"Both Password Should match"}
+        )
     : alert ("Please enter all Username and Password values");
        
     }   
    
     const handleUserName = ({target:{value}}) =>{
-        setUserName(value);
+        setUserinfo(
+            {...userinfo, username:value}
+        )
     }
+
     const handlePassword = ({target:{value}}) =>{
-        console.log(value,"Password");
-        setPassword(value);
+        setUserinfo(
+            {...userinfo, password:value})
+        
     }
-    // console.log(username,"username");
+   
     const handleConfirmPassword = ({target:{value}}) =>{
-        console.log(value,"CPassword");
-        // setPassword(event.target.value);
-        setCpassword(value)
+        // console.log(value,"CPassword");
+        // // setPassword(event.target.value);
+        // // setCpassword(value)
+        setUserinfo(
+            {...userinfo, cpassword:value}
+        )
     }
 // console.log(cpassword,"Cpas")
   return (
@@ -38,14 +54,14 @@ function RegistrationForm() {
     <h1> Registration Form</h1>
     <label> Username</label>
     <input type="text" placeholder="enter your username" id='username_input'
-     onChange={handleUserName} value={username}></input> 
+     onChange={handleUserName} value={userinfo.username}></input> 
     <br></br> <br></br>
     <label> Password</label>
-    <input type="password" placeholder='Enter password' value={password}
+    <input type="password" placeholder='Enter password' value={userinfo.password}
     onChange={handlePassword}></input>
-    <p className='passwordError'> {passwordError}</p>
+    <p className='passwordError'> {userinfo.passwordError}</p>
     <label> Confirm Password</label>
-    <input type="password" placeholder='Re-enter password' value={cpassword}
+    <input type="password" placeholder='Re-enter password' value={userinfo.cpassword}
     onChange={handleConfirmPassword}></input>
     <br></br> <br></br>
     <button type='submit' onClick={onSubmit}>Register</button>
