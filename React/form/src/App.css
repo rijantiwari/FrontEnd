@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  
 }
 
 .App-logo {
@@ -36,8 +37,19 @@
     transform: rotate(360deg);
   }
 }
+
 .passwordError{
 
   color:red;
   font-size: 8px;
+}
+.form-container{
+  border: 1px solid black;
+  height: 400px;
+  width: 500px;
+  margin-left: 200px;
+  margin-top: 50px;
+  box-shadow: 5px 5px rgb(100, 91, 91);
+
+
 }

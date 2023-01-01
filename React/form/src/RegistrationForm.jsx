@@ -33,6 +33,7 @@ function RegistrationForm() {
 // console.log(cpassword,"Cpas")
   return (
     <> 
+    <div className='form-container'>
     <form>
     <h1> Registration Form</h1>
     <label> Username</label>
@@ -49,6 +50,8 @@ function RegistrationForm() {
     <br></br> <br></br>
     <button type='submit' onClick={onSubmit}>Register</button>
     </form>
+   
+    </div>
    
     </>
   )
