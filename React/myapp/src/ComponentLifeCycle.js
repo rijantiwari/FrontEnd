@@ -15,14 +15,19 @@ export default class ComponentLifeCycle extends Component {
     //         this.setState({name:"Python"});
     //     },10000)
     // }
+
     changeName = () =>{
-        this.setState({name:"python"})
+        this.setState({name:"python"});
     }
-  render() {
+    getSnapshotBeforeUpdate(prevProps, prevState){
+        document.getElementById("div1").innerHTML="Before : " + prevState.name;
+    }
+    render() {
     return (
       <>
       <h1>{this.state.name}</h1>
       <button onClick={this.changeName}>Change Name</button>
+      <div id='div1'></div>
       
       </>
       
