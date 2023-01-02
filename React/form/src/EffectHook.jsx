@@ -19,7 +19,7 @@ function EffectHook() {
     //   }, 1000);
     console.log("I am running");
 
-    },[]);
+    },[count]);
   
     return (
       <>
