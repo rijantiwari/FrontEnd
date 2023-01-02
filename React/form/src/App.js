@@ -6,11 +6,11 @@ import LoginForm from './LoginForm';
 import { useState } from 'react';
 
 function App() {
-  const[isRegistered, setRegistered] = useState(true);
+  const[isRegistered, setRegistered] = useState(false);
   return (
     <div className="App">
-     
-     {isRegistered?<LoginForm/>:<RegistrationForm/>}
+     {/* If user is not registered, registration form is shown  */}
+     {isRegistered?<LoginForm/>:<RegistrationForm setRegistered={setRegistered}/>}
 
      {/* <EffectHook /> */}
     </div>

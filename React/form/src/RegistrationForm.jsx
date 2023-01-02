@@ -1,7 +1,8 @@
 import React from 'react'
 import { useState } from 'react';
 
-function RegistrationForm() {
+function RegistrationForm({setRegistered}) {
+    console.log(setRegistered,'register')
     const[userinfo,setUserinfo]=useState({
         username:"",
         password:"",
@@ -19,13 +20,14 @@ function RegistrationForm() {
     !(userinfo.username === "" || userinfo.password ==="" || userinfo.cpassword === " ")
         ?(userinfo.password===userinfo.cpassword)
         ? alert (" Form Submitted") 
+        
         :setUserinfo(
             {...userinfo, passwordError:"Both Password Should match"}
         )
     : alert ("Please enter all Username and Password values");
-       
+    setRegistered(true);
     }   
-   
+
     const handleUserName = ({target:{value}}) =>{
         setUserinfo(
             {...userinfo, username:value}
