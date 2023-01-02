@@ -5,42 +5,18 @@ export default class Movies extends Component {
         state={
             movies:getMovies(),
         }
-getMoviesTitle=()=>{
-    const movies = this.state.movies;
-   for(let i in movies){
-        const movObj = movies[i].title;
-       return movObj;
-   }
-
-}
-getMoviesGenre=()=>{
-    const movies = this.state.movies;
-   for(let i in movies){
-        const movObj = movies[i].genre.name;
-       return movObj;
-   }
-
-}
-getMoviesStock=()=>{
-    const movies = this.state.movies;
-   for(let i in movies){
-        const movObj = movies[i].numberInStock;
-       return movObj;
-   }
-
-}
-getMoviesRating=()=>{
-    const movies = this.state.movies;
-   for(let i in movies){
-        const movObj = movies[i].dailyRentalRate;
-       return movObj;
-   }
-
+handleDelete=(movie)=>{
+    const movies = this.state.movies.filter((m)=>m._id !== movie._id);
+    this.setState({movies});
 }
   render() {
-  
+    const {length: count} = this.state.movies;
+  if(count === 0) 
+    return <p>There are no movies in the database.</p>;
     return (
+
         <>
+        <p>Showing {count} movies in the database.</p>
         <table className='table'>
         <thead>
          <tr>
@@ -48,16 +24,21 @@ getMoviesRating=()=>{
           <th scope="col">Genre</th>
           <th scope="col">Stock</th>
           <th scope="col">Rate</th>
+          <th></th>
          </tr>
         </thead>
+
         <tbody>
-    <tr>
-      <th scope="row">{  this.getMoviesTitle()}</th>
-      <td>{this.getMoviesGenre()}</td>
-      <td>{this.getMoviesStock()}</td>
-      <td>{this.getMoviesRating()}</td>
-    </tr>
-  </tbody>
+           {this.state.movies.map(movie =>
+            <tr key={movie._id}>
+            <td>{movie.title}</td>
+            <td>{movie.genre.name}</td>
+            <td>{movie.numberInStock}</td>
+            <td>{movie.dailyRentalRate}</td>
+            <td > <button onClick={()=>this.handleDelete(movie)} className='btn btn-danger btn-sm'>Delete</button></td>
+        </tr>           
+          )}
+        </tbody>
         </table>
         </>
       

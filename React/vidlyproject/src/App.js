@@ -5,7 +5,6 @@ import Movies from './Movies';
 function App() {
   return (
    <main className='container'>
-    <h1> Hello World</h1>
     <Movies/>
    </main>
   );
