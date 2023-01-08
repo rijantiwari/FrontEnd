@@ -1,4 +1,5 @@
-import React, { useReducer } from 'react'
+import React, { useReducer, useState } from 'react'
+import Component1 from './Component1'
 
 const initialState = {count:0}
 const reducer = (state, action )=>{
@@ -14,10 +15,13 @@ const reducer = (state, action )=>{
             throw new Error ();
     }
 }
+
 const ReducerHook = () => {
-    const [state, dispatch] = useReducer(reducer, initialState)
+    const [state, dispatch] = useReducer(reducer, initialState);
+    const [user, setUser] = useState("Test");
 
 const handleIncrement = () => {
+    setUser("Rijan")
     dispatch({type:"increment"});
 }
 const handleDecrement =() =>{
@@ -26,6 +30,7 @@ const handleDecrement =() =>{
 const handleReset =() => {
     dispatch({type:"reset"})
 }
+
   return (
     <>
     Count:{state.count}
@@ -34,7 +39,7 @@ const handleReset =() => {
     <button onClick={handleDecrement}>-</button>
     <button onClick={handleReset}>Reset</button>
 
-    
+    <Component1 user={user} />
     
     </>
   )

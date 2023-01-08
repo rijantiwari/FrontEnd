@@ -1,13 +1,13 @@
-import React from 'react'
+import React, { memo } from 'react'
 import Component2 from './Component2'
 
-const Component1 = () => {
-    
+const Component1 = ({user}) => {
+    console.log("I am Running ")
   return (
-    <div>Component1
-        <Component2  />
+    <div>
+      Hello {user}    
     </div>
   )
 }
 
-export default Component1
+export default  memo(Component1);
