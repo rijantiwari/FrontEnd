@@ -45,7 +45,7 @@ export default function InputAdornments() {
         </FormControl>
         <FormControl sx={{ m: 1, width: '25ch' }} variant="outlined">
           <InputLabel htmlFor="outlined-adornment-password">Password</InputLabel>
-          <OutlinedInput
+          <OutlinedInput    
             id="outlined-adornment-password"
             type={showPassword ? 'text' : 'password'}
             endAdornment={

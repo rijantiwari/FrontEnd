@@ -3,6 +3,7 @@ import './App.css';
 import CountrySelect from './materialui/MaterialUi';
 import IconLabelButtons from './materialui/MaterialUi';
 import InputAdornments from './materialui/MaterialUi';
+import GridComponent from './materialui/GridComponent';
 
 
 function App() {
@@ -10,7 +11,8 @@ function App() {
     <div className="App">
       {/* <CountrySelect/> */}
       {/* <IconLabelButtons /> */}
-      <InputAdornments/>
+      {/* <InputAdornments/> */}
+      <GridComponent />
     </div>
   );
 }
