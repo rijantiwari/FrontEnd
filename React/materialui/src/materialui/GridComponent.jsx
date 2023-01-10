@@ -13,17 +13,13 @@ import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
+import Header from "./Header";
+import Footer from "./Footer";
 
 const GridComponent = () => {
   return (
     <>
-      <CssBaseline />
-      <AppBar position="relative" color="secondary">
-        <Toolbar>
-          <NoteIcon />
-          <Typography variant="h6"> Posts </Typography>
-        </Toolbar>
-      </AppBar>
+      <Header />
       <main>
         <Grid>
           <Container>
@@ -34,7 +30,7 @@ const GridComponent = () => {
               Description Here
             </Typography>
             <Grid>
-              <Grid container justifyContent="center" spacing={2}>
+              <Grid container justifyContent="center" spacing={2} mt={1}>
                 <Grid item>
                   <Button variant="contained">Primary Button</Button>{" "}
                 </Grid>
@@ -46,7 +42,7 @@ const GridComponent = () => {
           </Container>
         </Grid>
         <Container>
-          <Grid container spacing={4}>
+          <Grid container spacing={4} mt={0.5}>
             <Grid item>
               <Card sx={{ maxWidth: 345 }}>
                 <CardMedia
@@ -118,6 +114,7 @@ const GridComponent = () => {
             </Grid>
           </Grid>
         </Container>
+        <Footer />
       </main>
     </>
   );
