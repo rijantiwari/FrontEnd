@@ -19,7 +19,6 @@ import Footer from "./Footer";
 const GridComponent = () => {
   return (
     <>
-      <Header />
       <main>
         <Grid>
           <Container>
@@ -114,7 +113,6 @@ const GridComponent = () => {
             </Grid>
           </Grid>
         </Container>
-        <Footer />
       </main>
     </>
   );

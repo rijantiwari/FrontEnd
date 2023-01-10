@@ -1,12 +1,9 @@
 import React from "react";
+import Footer from "./materialui/Footer";
 import Header from "./materialui/Header";
 
 const ContactUs = () => {
-  return (
-    <>
-      <Header />
-    </>
-  );
+  return <></>;
 };
 
 export default ContactUs;
