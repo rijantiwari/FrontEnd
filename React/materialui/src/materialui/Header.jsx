@@ -24,6 +24,9 @@ const Header = () => {
           <Typography variant="h6" component={Link} to="/contact-us">
             Contact Us
           </Typography>
+          <Typography variant="h6" component={Link} to="/users">
+            Users
+          </Typography>
         </Toolbar>
       </AppBar>
     </>

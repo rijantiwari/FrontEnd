@@ -8,14 +8,18 @@ import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import { useState } from "react";
 import { useEffect } from "react";
+import { CircularProgress } from "@mui/material";
 
 export default function Users() {
   const [users, setUsers] = useState([]);
+  const [loadingusers, setLoadingUsers] = useState([]);
   const getUserData = () => {
+    setLoadingUsers(true);
     fetch("https://63b06aa0f9a53fa20268c6ed.mockapi.io/api/v1/users")
       .then((res) => res.json())
       .then((data) => {
         setUsers(data);
+        setLoadingUsers(false);
       });
   };
 
@@ -29,27 +33,30 @@ export default function Users() {
         <TableHead>
           <TableRow>
             <TableCell>Sn.</TableCell>
-            <TableCell align="right">FirstName</TableCell>
-            <TableCell align="right">LastName</TableCell>
+            <TableCell>FirstName</TableCell>
+            <TableCell>LastName</TableCell>
           </TableRow>
         </TableHead>
-
-        <TableBody>
-          {users?.map((user) => {
-            return (
-              <TableRow
-                key={user.id}
-                sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
-              >
-                <TableCell component="th" scope="row">
-                  {user.id}
-                </TableCell>
-                <TableCell align="right">{user.firstname}</TableCell>
-                <TableCell align="right">{user.lastname}</TableCell>
-              </TableRow>
-            );
-          })}
-        </TableBody>
+        {loadingusers ? (
+          <CircularProgress />
+        ) : (
+          <TableBody>
+            {users?.map((user) => {
+              return (
+                <TableRow
+                  key={user.id}
+                  sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
+                >
+                  <TableCell component="th" scope="row">
+                    {user.id}
+                  </TableCell>
+                  <TableCell>{user.firstname}</TableCell>
+                  <TableCell>{user.lastname}</TableCell>
+                </TableRow>
+              );
+            })}
+          </TableBody>
+        )}
       </Table>
     </TableContainer>
   );
