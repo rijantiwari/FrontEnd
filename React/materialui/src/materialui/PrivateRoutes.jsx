@@ -5,6 +5,7 @@ import SignUp from "../Form/SignUp";
 import AboutUs from "./AboutUs";
 import ContactUs from "./ContactUs";
 import GridComponent from "./GridComponent";
+import Users from "./Users";
 
 const PrivateRoutes = () => {
   return (
@@ -15,6 +16,7 @@ const PrivateRoutes = () => {
         <Route path="/contact-us" element={<ContactUs />} />
         <Route path="/" element={<Login />} />
         <Route path="/registration" element={<SignUp />} />
+        <Route path="/users" element={<Users />} />
       </Routes>
     </>
   );
