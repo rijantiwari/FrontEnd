@@ -18,7 +18,9 @@ function App() {
     <div className="App">
       <CssBaseline />
       <BrowserRouter>
-        <PrivateRoutes />
+        <Layout>
+          <PrivateRoutes />
+        </Layout>
       </BrowserRouter>
     </div>
   );

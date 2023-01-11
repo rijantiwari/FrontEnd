@@ -77,7 +77,9 @@ export default function Login() {
               control={<Checkbox value="remember" color="primary" />}
               label="Remember me"
             />
-            <Typography>{passwordError}</Typography>
+            <Typography variant="h6" color="red">
+              {passwordError}
+            </Typography>
             <Button
               href={homeRedirect}
               type="submit"

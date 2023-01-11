@@ -15,7 +15,7 @@ const Header = () => {
       <AppBar position="relative" color="secondary">
         <Toolbar>
           <NoteIcon />
-          <Typography variant="h6" component={Link} to="/">
+          <Typography variant="h6" component={Link} to="/home">
             Posts
           </Typography>
           <Typography variant="h6" component={Link} to="/about-us">
