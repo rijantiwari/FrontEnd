@@ -8,20 +8,17 @@ import { CssBaseline } from "@mui/material";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import AboutUs from "./materialui/AboutUs";
 import Layout from "./materialui/Layout";
-import ContactUs from "./ContactUs";
+import ContactUs from "./materialui/ContactUs";
+import PrivateRoutes from "./materialui/PrivateRoutes";
+import SignUp from "./Form/Login";
+import Login from "./Form/Login";
 
 function App() {
   return (
     <div className="App">
       <CssBaseline />
       <BrowserRouter>
-        <Layout>
-          <Routes>
-            <Route path="/" element={<GridComponent />} />
-            <Route path="/about-us" element={<AboutUs />} />
-            <Route path="/contact-us" element={<ContactUs />} />
-          </Routes>
-        </Layout>
+        <PrivateRoutes />
       </BrowserRouter>
     </div>
   );
