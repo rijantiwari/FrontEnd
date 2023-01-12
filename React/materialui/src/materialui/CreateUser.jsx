@@ -1,4 +1,4 @@
-import { TextField } from "@mui/material";
+import { Button, Grid, TextField } from "@mui/material";
 import React, { useState } from "react";
 
 const CreateUser = () => {
@@ -12,9 +12,17 @@ const CreateUser = () => {
   };
   return (
     <>
-      <TextField id="outlined-basic" label="Firstname" variant="outlined" />
-      <TextField id="outlined-basic" label="Lastname" variant="outlined" />
-      <Button> ADD </Button>
+      <Grid>
+        <Grid item>
+          <TextField id="outlined-basic" label="Firstname" variant="outlined" />
+        </Grid>
+        <Grid item>
+          <TextField id="outlined-basic" label="Lastname" variant="outlined" />
+        </Grid>
+        <Grid item>
+          <Button>ADD</Button>
+        </Grid>
+      </Grid>
     </>
   );
 };
