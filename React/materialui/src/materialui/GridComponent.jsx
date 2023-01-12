@@ -16,15 +16,22 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Header from "./Header";
 import Footer from "./Footer";
+import axios from "axios";
 
 const GridComponent = () => {
   const [posts, setPosts] = useState([]);
   const [loadingposts, setLoadingPosts] = useState(false);
   const getPostData = () => {
     setLoadingPosts(true);
-    fetch("https://63b06aa0f9a53fa20268c6ed.mockapi.io/api/v1/Posts")
-      .then((res) => res.json())
-      .then((data) => {
+    // fetch("https://63b06aa0f9a53fa20268c6ed.mockapi.io/api/v1/Posts")
+    //   .then((res) => res.json())
+    //   .then((data) => {
+    //     setPosts(data);
+    //     setLoadingPosts(false);
+    //   });
+    let getpost = axios
+      .get("https://63b06aa0f9a53fa20268c6ed.mockapi.io/api/v1/Posts")
+      .then(({ data }) => {
         setPosts(data);
         setLoadingPosts(false);
       });
@@ -33,7 +40,7 @@ const GridComponent = () => {
   useEffect(() => {
     getPostData();
   }, []);
-  console.log(posts, "test posts");
+
   return (
     <>
       <main>

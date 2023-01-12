@@ -8,9 +8,12 @@ import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import { useState } from "react";
 import { useEffect } from "react";
-import { CircularProgress, Pagination } from "@mui/material";
+import { Button, CircularProgress, Pagination } from "@mui/material";
+import CreateUser from "./CreateUser";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function Users() {
+  const navigate = useNavigate();
   const [users, setUsers] = useState([]);
   const [loadingusers, setLoadingUsers] = useState([]);
   const [rowsPerPage, setRowsPerPage] = useState(10);
@@ -24,7 +27,9 @@ export default function Users() {
         setLoadingUsers(false);
       });
   };
-
+  const openCreateUser = () => {
+    navigate("/createuser");
+  };
   useEffect(() => {
     getUserData();
   }, []);
@@ -35,6 +40,10 @@ export default function Users() {
   };
   return (
     <>
+      <Button variant="contained" onClick={openCreateUser}>
+        Create User
+      </Button>
+      ]
       <TableContainer component={Paper}>
         <Table sx={{ minWidth: 650 }} aria-label="simple table">
           <TableHead>
@@ -50,14 +59,14 @@ export default function Users() {
             <TableBody>
               {users
                 .slice(page * rowsPerPage - rowsPerPage, rowsPerPage * page)
-                .map((user) => {
+                .map((user, index) => {
                   return (
                     <TableRow
                       key={user.id}
                       sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
                     >
                       <TableCell component="th" scope="row">
-                        {user.id}
+                        {rowsPerPage * (page - 1) + 1 + index}
                       </TableCell>
                       <TableCell>{user.firstname}</TableCell>
                       <TableCell>{user.lastname}</TableCell>
@@ -68,12 +77,12 @@ export default function Users() {
           )}
         </Table>
       </TableContainer>
-
       <Pagination
         count={Math.ceil(users?.length / rowsPerPage)}
         onChange={handleChangePage}
         color="primary"
       />
+      <CreateUser />
     </>
   );
 }

@@ -4,6 +4,7 @@ import Login from "../Form/Login";
 import SignUp from "../Form/SignUp";
 import AboutUs from "./AboutUs";
 import ContactUs from "./ContactUs";
+import CreateUser from "./CreateUser";
 import GridComponent from "./GridComponent";
 import Users from "./Users";
 
@@ -17,6 +18,7 @@ const PrivateRoutes = () => {
         <Route path="/" element={<Login />} />
         <Route path="/registration" element={<SignUp />} />
         <Route path="/users" element={<Users />} />
+        <Route path="/createuser" element={<CreateUser />} />
       </Routes>
     </>
   );
