@@ -9,6 +9,15 @@ function App() {
       <Sidebar />
       <Feed />
       <Widgets />
+      <Widgets />
+      <Widgets />
+      <Widgets />
+      <Widgets />
+      <Widgets />
+      <Widgets />
+      <Widgets />
+      <Widgets />
+      <Widgets />
     </div>
   );
 }
